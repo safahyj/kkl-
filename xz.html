@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>请在外部浏览器打开</title>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 从这里开始复制 放到页面中body开始标签下面即可-->
+    <div id="zs">
+        <img src="http://snsoss.dalongyun.com/hy/img/4.jpg" alt=""></div><!--图片更换 -->
+    <div id="heibg"></div>
+    <style>
+        #zs{width: 100%;left: 0px;top:0px;height:100%;text-align: center;position: fixed;z-index: 99991;display: none;}
+        #zs img{width: 100%;height: 100%;}
+        #heibg{position: fixed;width: 100%;height: 100%;left: 0px;top: 0px;background: #000;opacity: 0.85;filter: alpha(opacity=85);z-index: 99990;display: none;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+        checkxiazai()
+        }
+        function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+        };
+        function isMobileQQ() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/\sQQ/i) == " qq") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+        function checkxiazai() { 
+           if(isWeiXin()||isMobileQQ()){
+            document.getElementById('zs').style.display="block";
+            document.getElementById('heibg').style.display="block";
+            }else{
+                var u = navigator.userAgent, app = navigator.appVersion;
+                if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+                    window.location="http://safahyj.github.io/xz1.html"//此处为ios的跳转连接
+                 }else{
+                    window.location="http://safahyj.github.io/xz1.html"//此处为安卓的跳转连接
+                 }
+            }
+        }
+        </script>
+    <!-- 到这里复制结束-->
+</body>
+</html>
